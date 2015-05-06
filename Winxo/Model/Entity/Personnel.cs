@@ -1,9 +1,8 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
-using Winxo.Entity.Shared.Enums;
+using Winxo.Model.Enums;
 
-
-namespace Winxo.Entity.Shared.Entity
+namespace Winxo.Model.Entity
 {
     internal class Personnel
     {
@@ -84,7 +83,7 @@ namespace Winxo.Entity.Shared.Entity
         /// <summary>
         /// Position
         /// </summary>
-        public string PositionPrincipale { get; set; }
+        public string Fonction { get; set; }
        
         /// <summary>
         /// Qualification

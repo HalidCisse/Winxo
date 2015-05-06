@@ -1,7 +1,6 @@
 ﻿using System.ComponentModel;
 
-
-namespace Winxo.Entity.Shared.Enums
+namespace Winxo.Model.Enums
 {
     internal enum PersonTitles
     {

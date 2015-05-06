@@ -1,6 +1,5 @@
 using System.Data.Entity.Migrations;
-using Winxo.Entity;
-
+using Winxo.Model;
 
 namespace Winxo.Migrations
 {
