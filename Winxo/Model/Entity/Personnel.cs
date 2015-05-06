@@ -73,7 +73,8 @@ namespace Winxo.Model.Entity
         /// <summary>
         /// FullName
         /// </summary>
-        public string FullName => FirstName.Substring(0, 1).ToUpper() + FirstName.Substring(1).ToLower() + " " + LastName.Substring(0, 1).ToUpper() + LastName.Substring(1).ToLower();
+        public string FullName => FirstName.Substring(0, 1).ToUpper() + FirstName.Substring(1).ToLower() + " " +
+                                  LastName.Substring(0, 1).ToUpper() + LastName.Substring(1).ToLower();
 
         /// <summary>
         /// StaffId
