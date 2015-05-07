@@ -11,8 +11,8 @@
         
     <!--</Frame>-->
     <NavigationWindow.Content>
-        <views:Login>
+        <views:Home>
             
-        </views:Login>
+        </views:Home>
     </NavigationWindow.Content>
 </NavigationWindow>
