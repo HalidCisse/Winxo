@@ -3,16 +3,16 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:views="clr-namespace:Winxo.Views"
-        mc:Ignorable="d" ShowsNavigationUI="False"
-        Title="Winxo" Height="350" Width="525">
+        xmlns:views="clr-namespace:Winxo.Views" WindowStartupLocation="CenterScreen"
+        mc:Ignorable="d" ShowsNavigationUI="False" Icon="{StaticResource MainIcon}"
+        Title="Winxo" Height="600" Width="1020">
     
     <!--<Frame Name="MainFraime">-->
         
     <!--</Frame>-->
     <NavigationWindow.Content>
-        <views:HomeView>
+        <views:HomePage>
             
-        </views:HomeView>
+        </views:HomePage>
     </NavigationWindow.Content>
 </NavigationWindow>

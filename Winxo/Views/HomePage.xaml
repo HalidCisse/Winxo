@@ -1,11 +1,12 @@
-﻿<Page x:Class="ESchool.Views.Shared.HomeView"
+﻿<Page x:Class="Winxo.Views.HomePage"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
       mc:Ignorable="d" 
-      d:DesignHeight="550" d:DesignWidth="1020" >
+      d:DesignHeight="550" d:DesignWidth="1000" Background="Beige">
 
+    
     <Page.Resources>
 
         <Style TargetType="TextBlock" x:Key="ButtonTextStyle">
@@ -32,17 +33,17 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
-        <Button Name="_STUDENT_BUTTON" Style="{DynamicResource  FontButton}" >
+        <Button Name="_CLIENT_BUTTON" Style="{DynamicResource FontButton}" Click="_CLIENT_BUTTON_OnClick">
             <StackPanel Margin="0,0,0,-10">
-                <Image Source = "{StaticResource StudentsIcon}" Width="150" Height="150" />
+                <Image Source = "{StaticResource ClientIcon}" Width="150" Height="150" />
                 <TextBlock Text="Clients" Style="{DynamicResource ButtonTextStyle}"/>
             </StackPanel>
             <Button.ToolTip>
                 <ToolTip PlacementTarget="{Binding ElementName= _STUDENT_BUTTON}">
                     <StackPanel Orientation="Vertical">
-                        <Label Content="Gestion des Etudiants" Style="{StaticResource ToolTipHeaderStyle}"></Label>
+                        <Label Content="Gestion des Clients" Style="{StaticResource ToolTipHeaderStyle}"></Label>
                         <TextBlock Style="{StaticResource ToolTipTextStyle}" TextWrapping="Wrap">
-                        Enregister vos etudiants <LineBreak/> controler les absences <LineBreak/> Controler les notes des controles
+                        Registration des Clients <LineBreak/> Contrôler les Empreintes <LineBreak/> Hostoriques Achats
                         </TextBlock>
                     </StackPanel>
                 </ToolTip>
@@ -50,17 +51,17 @@
         </Button>
 
 
-        <Button Name="_PEDAGOGIE_BUTTON" Grid.Row="0" Grid.Column="2" Style="{DynamicResource  FontButton}" >
+        <Button Name="_POMPS_BUTTON" Grid.Row="0" Grid.Column="2" Style="{DynamicResource  FontButton}" Click="_POMPS_BUTTON_OnClick">
             <StackPanel Margin="0,0,0,-10">
-                <Image Source = "{StaticResource PedagogyIcon}" Width="150" Height="150"/>
+                <Image Source = "{StaticResource PompIcon}" Width="150" Height="150"/>
                 <TextBlock Text="Pompes" Style="{DynamicResource ButtonTextStyle}"/>
             </StackPanel>
             <Button.ToolTip>
-                <ToolTip PlacementTarget="{Binding ElementName= _PEDAGOGIE_BUTTON}">
+                <ToolTip PlacementTarget="{Binding ElementName= __POMPS_BUTTON}">
                     <StackPanel Orientation="Vertical">
-                        <Label Content="Gestion des Etudes" Style="{StaticResource ToolTipHeaderStyle}"></Label>
+                        <Label Content="Gestion des Pompes" Style="{StaticResource ToolTipHeaderStyle}"/>
                         <TextBlock Style="{StaticResource ToolTipTextStyle}"  TextWrapping="Wrap">
-                        Enregister vos filieres, classes <LineBreak/> planifier les periodes scolaires <LineBreak/> Inscrire les etudiants
+                        Enregister les colonnes, Pompes 
                         </TextBlock>
                     </StackPanel>
                 </ToolTip>
@@ -68,9 +69,9 @@
         </Button>
 
 
-        <Button Name="_STAFF_BUTTON" Grid.Column="4" Grid.Row="0" Style="{DynamicResource FontButton}" >
+        <Button Name="_STAFF_BUTTON" Grid.Column="4" Grid.Row="0" Style="{DynamicResource FontButton}" Click="_STAFF_BUTTON_OnClick">
             <StackPanel Margin="0,0,0,-10">
-                <Image Source = "{StaticResource StaffsIcon}" Width="150" Height="150"/>
+                <Image Source = "{StaticResource StaffIcon}" Width="150" Height="150"/>
                 <TextBlock Text="Personnels" Style="{DynamicResource ButtonTextStyle}"/>
             </StackPanel>
             <Button.ToolTip>
@@ -78,7 +79,7 @@
                     <StackPanel Orientation="Vertical">
                         <Label Content="Gestion des Ressources Humaines" Style="{StaticResource ToolTipHeaderStyle}"></Label>
                         <TextBlock Style="{StaticResource ToolTipTextStyle}"  TextWrapping="Wrap">
-                        Enregister vos staffs et Enseignants <LineBreak/> Controler les absences <LineBreak/> Emploi et remunerations
+                        Enregister vos staffs et pompistes <LineBreak/> Position et remunerations
                         </TextBlock>
                     </StackPanel>
                 </ToolTip>
@@ -86,18 +87,18 @@
         </Button>
 
 
-        <Button Name="_AGENDA_BUTTON" Grid.Column="0" Grid.Row="2" Style="{DynamicResource FontButton}" >
+        <Button Name="_OIL_BUTTON" Grid.Column="0" Grid.Row="2" Style="{DynamicResource FontButton}" Click="_OIL_BUTTON_OnClick">
             <StackPanel Margin="0,0,0,-10">
-                <Image Source = "{StaticResource AgendaIcon}" Width="150" Height="150"/>
-                <TextBlock Text="Huiles" Style="{DynamicResource ButtonTextStyle}"/>
+                <Image Source = "{StaticResource OilIcon}" Width="150" Height="150"/>
+                <TextBlock Text="Stock Huiles" Style="{DynamicResource ButtonTextStyle}"/>
             </StackPanel>
 
             <Button.ToolTip>
-                <ToolTip PlacementTarget="{Binding ElementName= _AGENDA_BUTTON}">
+                <ToolTip PlacementTarget="{Binding ElementName= _OIL_BUTTON}">
                     <StackPanel Orientation="Vertical">
-                        <Label Content="Gestion des Emploies des Temps" Style="{StaticResource ToolTipHeaderStyle}"/>
+                        <Label Content="Gestion Stock Huiles" Style="{StaticResource ToolTipHeaderStyle}"/>
                         <TextBlock  Style="{StaticResource ToolTipTextStyle}" TextWrapping="Wrap">
-                        Planifier les cours de chaque classe<LineBreak/> Planifier les cours, controls.. &#10;Ajouter des nouvelles matieres
+                        Controler le Stock<LineBreak/> Enregistrer les Carburant, Citernes
                         </TextBlock>
                     </StackPanel>
                 </ToolTip>
@@ -105,18 +106,18 @@
         </Button>
 
 
-        <Button Name="_ECONOMAT_BUTTON" Grid.Column="2" Grid.Row="2" Style="{DynamicResource  FontButton}" >
+        <Button Name="_CARBURANT_BUTTON" Grid.Column="2" Grid.Row="2" Style="{DynamicResource  FontButton}" Click="_CARBURANT_BUTTON_OnClick">
             <StackPanel Margin="0,0,0,-10">
-                <Image Source = "{StaticResource EconomatIcon}" Width="150" Height="150"/>
-                <TextBlock Text="Commandes" Style="{DynamicResource ButtonTextStyle}"/>
+                <Image Source = "{StaticResource ComIcon}" Width="150" Height="150"/>
+                <TextBlock Text="Stock Carburants" Style="{DynamicResource ButtonTextStyle}"/>
             </StackPanel>
 
             <Button.ToolTip>
-                <ToolTip PlacementTarget="{Binding ElementName= _ECONOMAT_BUTTON}">
+                <ToolTip PlacementTarget="{Binding ElementName= _CARBURANT_BUTTON}">
                     <StackPanel Orientation="Vertical">
-                        <Label Content="Gestion des Ressources Financieres" Style="{StaticResource ToolTipHeaderStyle}"></Label>
+                        <Label Content="Gestion Stock Carburant" Style="{StaticResource ToolTipHeaderStyle}"/>
                         <TextBlock Style="{StaticResource ToolTipTextStyle}"  TextWrapping="Wrap">
-                        Paiement Frais d'etudes <LineBreak/> Gestion des Salaires <LineBreak/> Gestion du Budget
+                        Stock Carburant <LineBreak/> Carburants <LineBreak/> Citernes
                         </TextBlock>
                     </StackPanel>
                 </ToolTip>
@@ -124,18 +125,18 @@
         </Button>
 
 
-        <Button Name="_STATISTIC_BUTTON" Grid.Column="4" Grid.Row="2" Style="{DynamicResource FontButton}" >
+        <Button Name="_JOURNAL_BUTTON" Grid.Column="4" Grid.Row="2" Style="{DynamicResource FontButton}" Click="_JOURNAL_BUTTON_OnClick">
             <StackPanel Margin="0,0,0,-10">
-                <Image Source = "{StaticResource StatistiqueIcon}" Width="150" Height="150"/>
-                <TextBlock Text="Rapports" Style="{DynamicResource ButtonTextStyle}"/>
+                <Image Source = "{StaticResource JournalIcon}" Width="150" Height="150"/>
+                <TextBlock Text="Journales" Style="{DynamicResource ButtonTextStyle}"/>
             </StackPanel>
 
             <Button.ToolTip>
-                <ToolTip PlacementTarget="{Binding ElementName= _STATISTIC_BUTTON}">
+                <ToolTip PlacementTarget="{Binding ElementName= _JOURNAL_BUTTON}">
                     <StackPanel Orientation="Vertical">
-                        <Label Content="Visualisation des Statistiques" Style="{StaticResource ToolTipHeaderStyle}"></Label>
+                        <Label Content="Gestion des rapports" Style="{StaticResource ToolTipHeaderStyle}"/>
                         <TextBlock Style="{StaticResource ToolTipTextStyle}" TextWrapping="Wrap">
-                        Statistiques
+                        Rapport
                         </TextBlock>
                     </StackPanel>
                 </ToolTip>
@@ -143,7 +144,4 @@
         </Button>
 
     </Grid>
-
-    
-
 </Page>

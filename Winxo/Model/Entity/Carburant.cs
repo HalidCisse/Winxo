@@ -1,21 +1,23 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
-using Winxo.Model.Enums;
+
 
 namespace Winxo.Model.Entity
 {
-    internal class Huile
+    internal class Carburant
     {
-
         [Key]
-        public Guid HuileGuid { get; set; }
+        public Guid CarburantGuid { get; set; }
 
 
-        public TypeHuile TypeHuile { get; set; }
+        public string Nom { get; set; }
 
+
+        public string TypeCarburant { get; set; }
 
 
         public double Seuil { get; set; }
+
 
 
 

@@ -1,5 +1,7 @@
 ﻿using System.ComponentModel;
 
+
+
 namespace Winxo.Model.Enums
 {
     internal enum Carburants
@@ -9,7 +11,7 @@ namespace Winxo.Model.Enums
         /// </summary>
         [Description("Essence")]
         Essence,
-
+        
         /// <summary>
         /// GasOil50
         /// </summary>
