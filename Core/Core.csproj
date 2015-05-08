@@ -34,7 +34,14 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Winxo\bin\Debug\CLib.dll</HintPath>
     </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -44,7 +51,30 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CoreService.cs" />
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Model\Entity\Carburant.cs" />
+    <Compile Include="Model\Entity\Citerne.cs" />
+    <Compile Include="Model\Entity\Colonne.cs" />
+    <Compile Include="Model\Entity\Commande.cs" />
+    <Compile Include="Model\Entity\Fournisseur.cs" />
+    <Compile Include="Model\Entity\Huile.cs" />
+    <Compile Include="Model\Entity\Journal.cs" />
+    <Compile Include="Model\Entity\Personnel.cs" />
+    <Compile Include="Model\Entity\Pompe.cs" />
+    <Compile Include="Model\Entity\Prelevement.cs" />
+    <Compile Include="Model\Entity\Stock.cs" />
+    <Compile Include="Model\Enums\Carburants.cs" />
+    <Compile Include="Model\Enums\HealthStates.cs" />
+    <Compile Include="Model\Enums\PersonTitles.cs" />
+    <Compile Include="Model\Enums\PrelevementType.cs" />
+    <Compile Include="Model\Enums\Rapport.cs" />
+    <Compile Include="Model\Enums\StockType.cs" />
+    <Compile Include="Model\Enums\TypeHuile.cs" />
+    <Compile Include="Model\WinxoContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

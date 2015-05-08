@@ -68,15 +68,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Model\Entity\Carburant.cs" />
-    <Compile Include="Model\Entity\Commande.cs" />
-    <Compile Include="Model\Entity\Fournisseur.cs" />
-    <Compile Include="Model\Entity\Journal.cs" />
-    <Compile Include="Model\Entity\Prelevement.cs" />
-    <Compile Include="Model\Entity\Stock.cs" />
-    <Compile Include="Model\Enums\PrelevementType.cs" />
-    <Compile Include="Model\Enums\Rapport.cs" />
-    <Compile Include="Model\Enums\StockType.cs" />
     <Compile Include="Views\ComingSoon.xaml.cs">
       <DependentUpon>ComingSoon.xaml</DependentUpon>
     </Compile>
@@ -94,16 +85,6 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Model\Entity\Citerne.cs" />
-    <Compile Include="Model\Entity\Colonne.cs" />
-    <Compile Include="Model\Entity\Huile.cs" />
-    <Compile Include="Model\Entity\Pompe.cs" />
-    <Compile Include="Model\Enums\Carburants.cs" />
-    <Compile Include="Model\Enums\TypeHuile.cs" />
-    <Compile Include="Model\WinxoContext.cs" />
-    <Compile Include="Model\Entity\Personnel.cs" />
-    <Compile Include="Model\Enums\PersonTitles.cs" />
-    <Compile Include="Model\Enums\HealthStates.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -130,11 +111,6 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Migrations\201505041853552_WinxMig.cs" />
-    <Compile Include="Migrations\201505041853552_WinxMig.Designer.cs">
-      <DependentUpon>201505041853552_WinxMig.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -148,9 +124,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <EmbeddedResource Include="Migrations\201505041853552_WinxMig.resx">
-      <DependentUpon>201505041853552_WinxMig.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -198,6 +171,12 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Ressources\journal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Core\Core.csproj">
+      <Project>{4727dbb5-6ab3-4da8-95c5-07537ada2220}</Project>
+      <Name>Core</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
