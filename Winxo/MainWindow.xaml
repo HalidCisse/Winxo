@@ -3,7 +3,9 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:views="clr-namespace:Winxo.Views" WindowStartupLocation="CenterScreen"
+        xmlns:views="clr-namespace:Winxo.Views"
+        xmlns:shared="clr-namespace:Winxo.Views.Shared"
+        WindowStartupLocation="CenterScreen"
         mc:Ignorable="d" ShowsNavigationUI="False" Icon="{StaticResource MainIcon}"
         Title="Winxo" Height="600" Width="1020">
     
@@ -11,8 +13,8 @@
         
     <!--</Frame>-->
     <NavigationWindow.Content>
-        <views:HomePage>
+        <shared:HomePage>
             
-        </views:HomePage>
+        </shared:HomePage>
     </NavigationWindow.Content>
 </NavigationWindow>

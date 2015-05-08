@@ -8,8 +8,9 @@
         <ResourceDictionary>
 
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="Views/Icons.xaml"/>
+                <ResourceDictionary Source="Ressources/Icons.xaml"/>
                 <ResourceDictionary Source="Ressources/CoreStyles.xaml"/>
+                <ResourceDictionary Source="Ressources/MyForm.xaml"/>
                 
             </ResourceDictionary.MergedDictionaries>
 

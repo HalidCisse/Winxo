@@ -30,9 +30,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Bytes2you.Validation">
+      <HintPath>..\packages\Bytes2you.Validation.2.0.0.0\lib\portable-win+net40+sl40+wp+Xbox40\Bytes2you.Validation.dll</HintPath>
+    </Reference>
     <Reference Include="CLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Winxo\bin\Debug\CLib.dll</HintPath>
+      <HintPath>..\packages\CLib.1.0.0\lib\net45\CLib.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
@@ -43,6 +46,13 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.Providers">
+      <HintPath>..\packages\Microsoft.AspNet.Providers.Core.2.0.0\lib\net40\System.Web.Providers.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -51,30 +61,88 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CoreService.cs" />
+    <Compile Include="Helpers\MembershipUserCreateStatus.cs" />
+    <Compile Include="Helpers\PayRollHelper.cs" />
+    <Compile Include="Managers\CustomersManager.cs" />
+    <Compile Include="Managers\EconomatManager.cs" />
+    <Compile Include="Managers\HrManager.cs" />
+    <Compile Include="Managers\MetaManager.cs" />
+    <Compile Include="Managers\PayrollManager.cs" />
+    <Compile Include="Managers\SecurityManager.cs" />
+    <Compile Include="Managers\TreasuryManager.cs" />
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Model\Entity\Carburant.cs" />
-    <Compile Include="Model\Entity\Citerne.cs" />
-    <Compile Include="Model\Entity\Colonne.cs" />
-    <Compile Include="Model\Entity\Commande.cs" />
-    <Compile Include="Model\Entity\Fournisseur.cs" />
-    <Compile Include="Model\Entity\Huile.cs" />
-    <Compile Include="Model\Entity\Journal.cs" />
-    <Compile Include="Model\Entity\Personnel.cs" />
-    <Compile Include="Model\Entity\Pompe.cs" />
-    <Compile Include="Model\Entity\Prelevement.cs" />
-    <Compile Include="Model\Entity\Stock.cs" />
-    <Compile Include="Model\Enums\Carburants.cs" />
-    <Compile Include="Model\Enums\HealthStates.cs" />
-    <Compile Include="Model\Enums\PersonTitles.cs" />
-    <Compile Include="Model\Enums\PrelevementType.cs" />
-    <Compile Include="Model\Enums\Rapport.cs" />
-    <Compile Include="Model\Enums\StockType.cs" />
-    <Compile Include="Model\Enums\TypeHuile.cs" />
+    <Compile Include="Model\Caisse\Entity\BillPayOff.cs" />
+    <Compile Include="Model\Caisse\Entity\Employement.cs" />
+    <Compile Include="Model\Caisse\Entity\Paycheck.cs" />
+    <Compile Include="Model\Caisse\Entity\PayRoll.cs" />
+    <Compile Include="Model\Caisse\Entity\Salary.cs" />
+    <Compile Include="Model\Caisse\Entity\Transaction.cs" />
+    <Compile Include="Model\Caisse\Enums\InstallmentRecurrence.cs" />
+    <Compile Include="Model\Caisse\Enums\PaymentMethode.cs" />
+    <Compile Include="Model\Caisse\Enums\PaymentType.cs" />
+    <Compile Include="Model\Caisse\Enums\PayType.cs" />
+    <Compile Include="Model\Caisse\Enums\TransactionType.cs" />
+    <Compile Include="Model\Caisse\Views\EmploymentCard.cs" />
+    <Compile Include="Model\Caisse\Views\PayrollCard.cs" />
+    <Compile Include="Model\Caisse\Views\SalaryCard.cs" />
+    <Compile Include="Model\Caisse\Views\TransactionCard.cs" />
+    <Compile Include="Model\Shared\Entity\Customer.cs" />
+    <Compile Include="Model\Shared\Enums\CustomerStatus.cs" />
+    <Compile Include="Model\Stocks\Entity\Carburant.cs" />
+    <Compile Include="Model\Stocks\Entity\Citerne.cs" />
+    <Compile Include="Model\Shared\Entity\Document.cs" />
+    <Compile Include="Model\Shared\Entity\Person.cs" />
+    <Compile Include="Model\Stocks\Entity\Colonne.cs" />
+    <Compile Include="Model\Stocks\Entity\Commande.cs" />
+    <Compile Include="Model\Stocks\Entity\Fournisseur.cs" />
+    <Compile Include="Model\Stocks\Entity\Huile.cs" />
+    <Compile Include="Model\Stocks\Entity\Journal.cs" />
+    <Compile Include="Model\Shared\Entity\Staff.cs" />
+    <Compile Include="Model\Stocks\Entity\Pompe.cs" />
+    <Compile Include="Model\Stocks\Entity\Prelevement.cs" />
+    <Compile Include="Model\Stocks\Entity\Stock.cs" />
+    <Compile Include="Model\Shared\Enums\Carburants.cs" />
+    <Compile Include="Model\Shared\Enums\StaffStatus.cs" />
+    <Compile Include="Model\Shared\Enums\HealthStates.cs" />
+    <Compile Include="Model\Shared\Enums\PersonTitles.cs" />
+    <Compile Include="Model\Shared\Enums\PrelevementType.cs" />
+    <Compile Include="Model\Shared\Enums\Rapport.cs" />
+    <Compile Include="Model\Shared\Enums\StockType.cs" />
+    <Compile Include="Model\Shared\Enums\TypeHuile.cs" />
+    <Compile Include="Model\Security\Entity\SecurityClearances.cs" />
+    <Compile Include="Model\Security\Entity\User.cs" />
+    <Compile Include="Model\Security\Enums\AdminClearances.cs" />
+    <Compile Include="Model\Security\Enums\UserSpace.cs" />
+    <Compile Include="Model\Shared\Views\ViewCard.cs" />
     <Compile Include="Model\WinxoContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Model\Stocks\Enums\" />
+    <Folder Include="Model\Stocks\Views\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\test.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\Down.png" />
+    <Content Include="Resources\No.png" />
+    <Content Include="Resources\Up.png" />
+    <Content Include="Resources\yes.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

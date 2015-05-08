@@ -1,7 +1,7 @@
 using System.Data.Entity.Migrations;
-using Winxo.Model;
+using Core.Model;
 
-namespace Winxo.Migrations
+namespace Core.Migrations
 {
     internal sealed class Configuration : DbMigrationsConfiguration<WinxoContext>
     {

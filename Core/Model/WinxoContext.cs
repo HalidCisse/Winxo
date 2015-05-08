@@ -1,25 +1,33 @@
 ﻿using System.Data.Entity;
-using Winxo.Model.Entity;
+using Core.Model.Caisse.Entity;
+using Core.Model.Shared.Entity;
+using Core.Model.Stocks.Entity;
 
-namespace Winxo.Model
+namespace Core.Model
 {
     internal class WinxoContext : DbContext
     {
       
         public WinxoContext() : base("name=conString")
         {
+
+            //          Update-Database 
         }
 
-        //          Update-Database 
-        //          Update-Database 
 
 
 
+        #region SHARED
+
+        /// <summary>
+        /// Les Clients
+        /// </summary>
+        public virtual DbSet<Customer> Customers { get; set; }
 
         /// <summary>
         /// Les Personnels
         /// </summary>
-        public virtual DbSet<Personnel> Personnels { get; set; }
+        public virtual DbSet<Staff> Staffs { get; set; }
 
         /// <summary>
         /// Les Pomps
@@ -36,12 +44,42 @@ namespace Winxo.Model
         /// </summary>
         public virtual DbSet<Citerne> Citernes { get; set; }
 
-
         /// <summary>
         /// Les Huile
         /// </summary>
         public virtual DbSet<Huile> Huiles { get; set; }
 
+
+        #endregion
+
+
+
+
+        #region ECONOMAT
+
+        /// <summary>
+        /// Employements des Staffs
+        /// </summary>
+        public virtual DbSet<Employment> Employments { get; set; }
+
+        /// <summary>
+        /// Renumerations des Employers
+        /// </summary>
+        public virtual DbSet<Salary> Salaries { get; set; }
+
+        /// <summary>
+		/// Methode des Payements des salaires des Staffs et des Enseignants
+		/// </summary>		
+        public virtual DbSet<Payroll> Payrolls { get; set; }
+       
+
+        /// <summary>
+        /// Transactions Caisse
+        /// </summary>
+        public virtual DbSet<Transaction> Transactions { get; set; }
+
+
+        #endregion
 
 
     }
