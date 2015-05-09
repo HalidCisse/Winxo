@@ -19,20 +19,20 @@ namespace Winxo.Ressources
         {
             if(e.LeftButton == MouseButtonState.Pressed)
             {
-                sender.ForWindowFromTemplate (w =>
-                {
-                    if(w.WindowState != WindowState.Maximized) return;
-                    w.BeginInit ();
-                    const double adjustment = 40.0;
-                    var mouse1 = e.MouseDevice.GetPosition (w);
-                    var width1 = Math.Max (w.ActualWidth - 2 * adjustment, adjustment);
-                    w.WindowState = WindowState.Normal;
-                    var width2 = Math.Max (w.ActualWidth - 2 * adjustment, adjustment);
-                    w.Left = (mouse1.X - adjustment) * (1 - width2 / width1);
-                    w.Top = -7;
-                    w.EndInit ();
-                    w.DragMove ();
-                });
+                sender.ForWindowFromTemplate(w =>
+               {
+                   if (w.WindowState != WindowState.Maximized) return;
+                   w.BeginInit();
+                   const double adjustment = 40.0;
+                   var mouse1 = e.MouseDevice.GetPosition(w);
+                   var width1 = Math.Max(w.ActualWidth - 2 * adjustment, adjustment);
+                   w.WindowState = WindowState.Normal;
+                   var width2 = Math.Max(w.ActualWidth - 2 * adjustment, adjustment);
+                   w.Left = (mouse1.X - adjustment) * (1 - width2 / width1);
+                   w.Top = -7;
+                   w.EndInit();
+                   w.DragMove();
+               });
             }
         }
 
