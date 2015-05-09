@@ -1,7 +1,7 @@
 ﻿<Application x:Class="Winxo.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             StartupUri="MainWindow.xaml">
+             StartupUri="MainWindow.xaml" Exit="Application_Exit">
 
 
     <Application.Resources>
@@ -11,6 +11,7 @@
                 <ResourceDictionary Source="Ressources/Icons.xaml"/>
                 <ResourceDictionary Source="Ressources/CoreStyles.xaml"/>
                 <ResourceDictionary Source="Ressources/MyForm.xaml"/>
+                <ResourceDictionary Source="Ressources/MyWindowStyle.xaml"/>
                 
             </ResourceDictionary.MergedDictionaries>
 

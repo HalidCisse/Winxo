@@ -3,22 +3,27 @@
 
 
 
-    <BitmapImage x:Key="MainIcon" UriSource="../Ressources/mainicon.png"/>
+    <BitmapImage x:Key="MainIcon" UriSource="../Ressources/Icons/mainicon.png"/>
 
-    <BitmapImage x:Key="ClientIcon" UriSource="../Ressources/clienticon2.png" />
+    <BitmapImage x:Key="ClientIcon" UriSource="../Ressources/Icons/clienticon2.png" />
 
-    <BitmapImage x:Key="PompIcon" UriSource="../Ressources/pomp3.jpg" />
+    <BitmapImage x:Key="PompIcon" UriSource="../Ressources/Icons/pomp3.jpg" />
 
-    <BitmapImage x:Key="ComingSoonIcon" UriSource="../Ressources/ComingSoon.png" />
+    <BitmapImage x:Key="ComingSoonIcon" UriSource="../Ressources/Icons/ComingSoon.png" />
 
-    <BitmapImage x:Key="StaffIcon" UriSource="../Ressources/Staff.png" />
+    <BitmapImage x:Key="StaffIcon" UriSource="../Ressources/Icons/Staff.png" />
 
-    <BitmapImage x:Key="OilIcon" UriSource="../Ressources/oil.png" />
+    <BitmapImage x:Key="OilIcon" UriSource="../Ressources/Icons/oil.png" />
 
-    <BitmapImage x:Key="ComIcon" UriSource="../Ressources/commande3.png" />
+    <BitmapImage x:Key="ComIcon" UriSource="../Ressources/Icons/commande3.png" />
 
-    <BitmapImage x:Key="JournalIcon" UriSource="../Ressources/journal.png" />
+    <BitmapImage x:Key="JournalIcon" UriSource="../Ressources/Icons/journal.png" />
+
+    <BitmapImage x:Key="CustomerIcon" UriSource="../Ressources/Icons/DefaultCustomer.png" />
+
+    <BitmapImage x:Key="UserIcon" UriSource="../Ressources/Icons/UserIcon.png" />
 
 
-
+    
+    
 </ResourceDictionary>

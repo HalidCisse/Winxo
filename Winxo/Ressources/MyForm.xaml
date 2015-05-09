@@ -19,42 +19,6 @@
     <SolidColorBrush x:Key="FormBorderBrushInactive" Color="#999999" />
     <SolidColorBrush x:Key="FormStatusForeground" Color="#FFFFFF" />
     <SolidColorBrush x:Key="FormStatusForegroundInactive" Color="#FFFFFF" />
-
-    <SolidColorBrush x:Key="TitleBarBackgroundBrush" Color="#3A3A3A" />
-    <SolidColorBrush x:Key="WindowBorderBrush" Color="#007ACC" />
-    <SolidColorBrush x:Key="WindowBorderBrushInactive" Color="#999999" />
-    <SolidColorBrush x:Key="WindowStatusForeground" Color="#FFFFFF" />
-    <SolidColorBrush x:Key="WindowStatusForegroundInactive" Color="#FFFFFF" />
-    <SolidColorBrush x:Key="WindowBackGroundColor" Color="#3A3A3A" />
-    
-    
-
-    <Style x:Key="WindowStyleTitleBarButton" TargetType="{x:Type Button}">
-        <Setter Property="Focusable" Value="false" />
-        <Setter Property="Template">
-            <Setter.Value>
-                <ControlTemplate TargetType="{x:Type Button}">
-                    <Grid>
-                        <Border x:Name="PART_border" Background="Transparent"/>
-                        <ContentPresenter />
-                    </Grid>
-                    <ControlTemplate.Triggers>
-                        <Trigger Property="IsMouseOver" Value="True">
-                            <Setter TargetName="PART_border" Property="Background" Value="#FFF" />
-                            <Setter TargetName="PART_border" Property="Opacity" Value="0.7" />
-                            <Setter Property="Foreground" Value="White" />
-                        </Trigger>
-                        <Trigger Property="IsPressed" Value="True">
-                            <Setter TargetName="PART_border" Property="Background" Value="{StaticResource WindowBorderBrush}"/>
-                            <Setter TargetName="PART_border" Property="Opacity" Value="1" />
-                            <Setter Property="Foreground" Value="#FFF"/>
-                        </Trigger>
-                    </ControlTemplate.Triggers>
-                </ControlTemplate>
-            </Setter.Value>
-        </Setter>
-    </Style>
-    
     
     <Style x:Key="FormTitleBarButton" TargetType="{x:Type Button}">
         <Setter Property="Focusable" Value="false" />
@@ -86,16 +50,7 @@
     <Style x:Key="MyForm" TargetType="{x:Type Window}">
         <Setter Property="AllowsTransparency" Value="true" />
         <Setter Property="WindowStyle" Value="None" />
-        <!--<Setter Property="Background" Value="Transparent" />-->
-        <Setter Property="ResizeMode" Value="NoResize"/>
-        
-        <!--<Setter Property="Effect" Value="{StaticResource Z-Depth5}">
-            --><!--<Setter.Value>
-                <DropShadowEffect Color="Black" ShadowDepth="0.9" BlurRadius="20" Opacity=".5" />
-                <BlurEffect   Radius="-20" RenderOptions.BitmapScalingMode="HighQuality" RenderingBias="Performance"/>
-            </Setter.Value>--><!--
-        </Setter>-->
-        
+        <Setter Property="ResizeMode" Value="NoResize"/>   
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type Window}">
@@ -103,10 +58,7 @@
                         Margin="0"
                         TextOptions.TextRenderingMode="ClearType"
                         TextOptions.TextFormattingMode="Display">
-                        <Border x:Name="PART_Border" Effect="{StaticResource Z-Depth5}" Width="Auto" Height="Auto" Background="{StaticResource FormBackGroundColor}" BorderBrush="{StaticResource FormBorderBrush}" BorderThickness="2" Padding="0">
-                            <!--<Border.Effect>
-                                <DropShadowEffect Color="black" Opacity="0.5" BlurRadius="20" ShadowDepth="2" Direction="315"/>
-                            </Border.Effect>-->
+                        <Border x:Name="PART_Border" Effect="{StaticResource Z-Depth5}" Width="Auto" Height="Auto" Background="{StaticResource FormBackGroundColor}" BorderBrush="{StaticResource FormBorderBrush}" BorderThickness="2" Padding="0">                            
                             <DockPanel   HorizontalAlignment="Stretch" Background="Transparent" VerticalAlignment="Stretch">
                                 <Border x:Name="TitleBar" DockPanel.Dock="Top" Background="{StaticResource FormTitleBarBackgroundBrush}" BorderThickness="0" MouseLeftButtonDown="TitleBarMouseLeftButtonDown" MouseMove="TitleBarMouseMove">
                                     <Grid Height="50">
@@ -118,7 +70,7 @@
                                             <ColumnDefinition Width="34"/>
                                         </Grid.ColumnDefinitions>
                                         <TextBlock x:Name="Caption" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="4,0,0,0" FontFamily="Segoe UI" FontSize="12" Opacity="0.66" Text="{Binding Path=Title, Mode=OneWay, RelativeSource={RelativeSource TemplatedParent}}"/>                                       
-                                        <Button Grid.Column="4" x:Name="CloseButton"  Opacity=".5" Foreground="Gray" VerticalAlignment="Top" Width="34" Height="26" Style="{StaticResource WindowStyleTitleBarButton}" Click="CloseButtonClick">
+                                        <Button Grid.Column="4" x:Name="CloseButton"  Opacity=".5" Foreground="Gray" VerticalAlignment="Top" Width="34" Height="26" Style="{StaticResource FormTitleBarButton}" Click="CloseButtonClick">
                                             <Grid MaxHeight="9" MaxWidth="9">
                                                 <Path
                                                     Stroke="{Binding RelativeSource={RelativeSource AncestorType=Button}, Path=Foreground}"
@@ -157,7 +109,5 @@
             </Style>
         </Style.Resources>
     </Style>
-
-
     
 </ResourceDictionary>

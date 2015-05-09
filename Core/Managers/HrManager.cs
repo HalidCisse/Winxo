@@ -59,7 +59,13 @@ namespace Core.Managers
         }
 
 
-        #region 
+        #region HELPERS
+
+        public Staff GetStaff(Guid staffGuid)
+        {
+            using (var db = new WinxoContext())
+                return db.Staffs.Include(s => s.Person).FirstOrDefault(s => s.StaffGuid == staffGuid);
+        }
 
         ///// <summary>
         ///// 
@@ -138,11 +144,7 @@ namespace Core.Managers
         ///// </summary>
         ///// <param name="staffGuid"></param>
         ///// <returns></returns>
-        //public Staff GetStaffByGuid(Guid staffGuid)
-        //{
-        //    using (var db = new WinxoContext())
-        //        return db.Staffs.Include(s => s.Person).FirstOrDefault(s => s.StaffGuid == staffGuid);
-        //}
+
 
         ///// <summary>
         ///// 

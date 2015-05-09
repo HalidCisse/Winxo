@@ -9,14 +9,13 @@ using System.Security.Principal;
 using System.Threading;
 using System.Web.Security;
 using CLib;
-using Core.Model.Caisse.Views;
 using Core.Model.Security.Entity;
 using Core.Model.Security.Enums;
 using Core.Model.Shared.Views;
 
 namespace Core.Managers
 {
-    class SecurityManager
+    public class SecurityManager
     {
 
         #region CRUD
@@ -35,11 +34,11 @@ namespace Core.Managers
             {
                 MembershipCreateStatus status;
                 Membership.CreateUser(
-                    "defaultAdmin",
+                    "halid",
                     "pass00.",
                     "halid@gmail.com",
-                    "defaultAdmin",
-                    "defaultAdmin",
+                    "halid",
+                    "halid",
                     true,
                     new Guid("53f258a3-f931-4975-b6ec-17d26aa95848"),
                     out status);
@@ -48,8 +47,8 @@ namespace Core.Managers
                     Roles.CreateRole(AdminClearances.SuperUser.ToString());
                     Roles.CreateRole(UserSpace.AdminSpace.ToString());
 
-                    Roles.AddUserToRole("defaultAdmin", AdminClearances.SuperUser.ToString());
-                    Roles.AddUserToRole("defaultAdmin", UserSpace.AdminSpace.ToString());
+                    Roles.AddUserToRole("halid", AdminClearances.SuperUser.ToString());
+                    Roles.AddUserToRole("halid", UserSpace.AdminSpace.ToString());
                 }
             }
             #endif

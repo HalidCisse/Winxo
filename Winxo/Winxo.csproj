@@ -53,6 +53,9 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.Web.Providers">
       <HintPath>..\packages\Microsoft.AspNet.Providers.Core.2.0.0\lib\net40\System.Web.Providers.dll</HintPath>
     </Reference>
@@ -91,12 +94,46 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Extentions\EmailValidator.cs" />
+    <Compile Include="Extentions\FileValidator.cs" />
+    <Compile Include="Extentions\LocalExtensions.cs" />
+    <Compile Include="Extentions\ModernDialogExtention.cs" />
+    <Compile Include="Extentions\NameValidation.cs" />
+    <Compile Include="Extentions\NotNullValidator.cs" />
+    <Compile Include="Extentions\PhoneNumValidator.cs" />
+    <Compile Include="Extentions\SearchDelegate.cs" />
+    <Compile Include="Extentions\StaffMatriculeValidator.cs" />
+    <Compile Include="Extentions\StaffValidator.cs" />
+    <Compile Include="Extentions\TabItemWidthAdjustmentConverter.cs" />
+    <Compile Include="Extentions\TabSizeConverter.cs" />
+    <Compile Include="Login.xaml.cs">
+      <DependentUpon>Login.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Ressources\MyForm.cs" />
+    <Compile Include="Ressources\MyWindowStyle.cs" />
     <Compile Include="Views\Clients\ClientsView.xaml.cs">
       <DependentUpon>ClientsView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Clients\NewClient.xaml.cs">
       <DependentUpon>NewClient.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Security\AddUser.xaml.cs">
+      <DependentUpon>AddUser.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Security\ChangePass.xaml.cs">
+      <DependentUpon>ChangePass.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Security\ResetPass.xaml.cs">
+      <DependentUpon>ResetPass.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Security\UserCard.xaml.cs">
+      <DependentUpon>UserCard.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Security\UserRoles.xaml.cs">
+      <DependentUpon>UserRoles.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Security\USpaces.xaml.cs">
+      <DependentUpon>USpaces.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Shared\ComingSoon.xaml.cs">
       <DependentUpon>ComingSoon.xaml</DependentUpon>
@@ -104,9 +141,10 @@
     <Compile Include="Views\Shared\HomePage.xaml.cs">
       <DependentUpon>HomePage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Shared\Login.xaml.cs">
-      <DependentUpon>Login.xaml</DependentUpon>
-    </Compile>
+    <Page Include="Login.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -124,14 +162,42 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Ressources\MyForm.xaml">
-      <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Ressources\MyWindowStyle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\Clients\ClientsView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Clients\NewClient.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Security\AddUser.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Security\ChangePass.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Security\ResetPass.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Security\UserCard.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Security\UserRoles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Security\USpaces.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -144,10 +210,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Ressources\Icons.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\Shared\Login.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -176,49 +238,55 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <AppDesigner Include="Properties\" />
-    <Resource Include="Ressources\fontawesome-webfont.ttf" />
+    <Resource Include="Ressources\Icons\fontawesome-webfont.ttf" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Ressources\ComingSoon.png" />
+    <Resource Include="Ressources\Icons\ComingSoon.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Ressources\clienticon2.png" />
+    <Resource Include="Ressources\Icons\clienticon2.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Ressources\pomp3.jpg" />
+    <Resource Include="Ressources\Icons\pomp3.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Ressources\staff.png" />
+    <Resource Include="Ressources\Icons\staff.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Ressources\oil4.png" />
+    <Resource Include="Ressources\Icons\oil4.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Ressources\oil6.png" />
+    <Resource Include="Ressources\Icons\oil6.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="favicon.ico" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Ressources\commande3.png" />
+    <Resource Include="Ressources\Icons\commande3.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Ressources\mainicon.png" />
+    <Resource Include="Ressources\Icons\mainicon.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Ressources\oil.png" />
+    <Resource Include="Ressources\Icons\oil.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Ressources\journal.png" />
+    <Resource Include="Ressources\Icons\journal.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Core\Core.csproj">
       <Project>{4727dbb5-6ab3-4da8-95c5-07537ada2220}</Project>
       <Name>Core</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Ressources\Icons\DefaultCustomer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Ressources\Icons\UserIcon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

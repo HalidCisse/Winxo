@@ -61,7 +61,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CoreService.cs" />
+    <Compile Include="Model\Shared\Views\SearchCard.cs" />
+    <Compile Include="WinxoService.cs" />
     <Compile Include="Helpers\MembershipUserCreateStatus.cs" />
     <Compile Include="Helpers\PayRollHelper.cs" />
     <Compile Include="Managers\CustomersManager.cs" />

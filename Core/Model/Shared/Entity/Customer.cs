@@ -19,34 +19,23 @@ namespace Core.Model.Shared.Entity
         [Key]
         public Guid CustomerGuid { get; set; }
 
-        /// <summary>
-        /// Guid de la personne Associer
-        /// </summary>
+       
         public Guid PersonGuid { get; set; }
 
-        /// <summary>
-        /// StaffId
-        /// </summary>
-        public string Matricule { get; set; }       
-
-        /// <summary>
-        /// Experience du Staff
-        /// </summary>
-        public int Since { get; set; }
+       
+        public string Matricule { get; set; }
 
         
+        public string Service { get; set; }
 
-        /// <summary>
-        /// Suspendu, Regulier, Licencier
-        /// </summary>
-        public StaffStatus Statut { get; set; }
+       
+        public int Since { get; set; }
+
+               
+        public CustomerStatus CustomerStatus { get; set; }
 
 
-
-
-        /// <summary>
-        /// La personne Associer
-        /// </summary>
+        
         [ForeignKey("PersonGuid")]
         public virtual Person Person { get; set; }
 
