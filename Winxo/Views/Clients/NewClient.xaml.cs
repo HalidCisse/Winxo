@@ -7,10 +7,10 @@ using System.Windows.Input;
 using System.Windows.Media.Imaging;
 using CLib;
 using CLib.Validation;
+using Core.Model.Customer.Entity;
 using Core.Model.Shared.Entity;
 using Core.Model.Shared.Enums;
 using FirstFloor.ModernUI.Windows.Controls;
-
 
 namespace Winxo.Views.Clients
 {
@@ -30,29 +30,27 @@ namespace Winxo.Views.Clients
 
                     _CIVILITE_.ItemsSource = EnumsHelper.GetAllValuesAndDescriptions<PersonTitles>();
                     _STATUT.ItemsSource = EnumsHelper.GetAllValuesAndDescriptions<CustomerStatus>();
-                    _HEALTH_STATUT.ItemsSource = EnumsHelper.GetAllValuesAndDescriptions<HealthStates>();
 
                     _NATIONALITY.ItemsSource = App.Winxo.Customers.AllNationalities();
-                    _BIRTH_PLACE.ItemsSource = App.Winxo.Customers.AllBirthPlaces();
 
                     if (clientToModGuid == Guid.Empty)
                     {
                         _isAdd = true;
 
-                        var data = new Customer
+                        var obj = new Customer
                         {
                             Matricule = App.Winxo.Customers.NewMatricule(),
 
                             CustomerStatus = CustomerStatus.Default,
+
                             Person = new Person
                             {
                                 Title = PersonTitles.Mr,
                                 HealthState = HealthStates.Normal,
                                 BirthDate = DateTime.Today.AddYears(-20)
-                            }
-                            
+                            }                            
                         };
-                        _GRID.DataContext = data;
+                        _GRID.DataContext = obj;
                     }
                     else
                     {

@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using CLib;
-using Core.Model.Caisse.Entity;
-using Core.Model.Caisse.Enums;
+using Core.Model.Hr.Entity;
+using Core.Model.Sale.Enums;
 
 namespace Core.Helpers
 {

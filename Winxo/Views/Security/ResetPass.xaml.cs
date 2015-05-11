@@ -3,7 +3,6 @@ using System.Security;
 using System.Windows;
 using System.Windows.Input;
 using FirstFloor.ModernUI.Windows.Controls;
-using Winxo;
 
 namespace Winxo.Views.Security
 {

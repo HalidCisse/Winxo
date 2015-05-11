@@ -8,6 +8,8 @@ using System.Web.Security;
 using Bytes2you.Validation;
 using CLib;
 using Core.Model;
+using Core.Model.Customer.Entity;
+using Core.Model.Hr.Entity;
 using Core.Model.Security.Entity;
 using Core.Model.Shared.Entity;
 using Core.Model.Shared.Views;
@@ -170,10 +172,10 @@ namespace Core.Managers
         }
 
         
-        public Customer GetCustomer(string staffMatricule)
+        public Customer GetCustomer(string customerMatricule)
         {
             using (var db = new WinxoContext())
-                return db.Customers.Include(s => s.Person).FirstOrDefault(s => s.Matricule.Equals(staffMatricule));
+                return db.Customers.Include(s => s.Person).FirstOrDefault(s => s.Matricule.Equals(customerMatricule));
         }
 
      

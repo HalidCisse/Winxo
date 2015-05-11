@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Globalization;
-using Core.Model.Caisse.Entity;
+using Core.Model.Hr.Entity;
 
 namespace Core.Model.Shared.Views
 {

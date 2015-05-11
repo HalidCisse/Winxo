@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Core</RootNamespace>
     <AssemblyName>Core</AssemblyName>
-    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
   </PropertyGroup>
@@ -35,14 +35,16 @@
       <HintPath>..\packages\Bytes2you.Validation.2.0.0.0\lib\portable-win+net40+sl40+wp+Xbox40\Bytes2you.Validation.dll</HintPath>
     </Reference>
     <Reference Include="CLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\CLib.1.0.2\lib\portable-net4+sl4\CLib.dll</HintPath>
+      <HintPath>..\packages\CLib.1.0.4\lib\portable-net4+sl4\CLib.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="EntityFramework">
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="EntityFramework.SqlServer">
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -61,6 +63,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Model\Sale\Entity\Purchase.cs" />
+    <Compile Include="Model\Sale\Entity\Product.cs" />
     <Compile Include="Model\Shared\Views\SearchCard.cs" />
     <Compile Include="WinxoService.cs" />
     <Compile Include="Helpers\MembershipUserCreateStatus.cs" />
@@ -73,36 +77,36 @@
     <Compile Include="Managers\SecurityManager.cs" />
     <Compile Include="Managers\TreasuryManager.cs" />
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Model\Caisse\Entity\BillPayOff.cs" />
-    <Compile Include="Model\Caisse\Entity\Employement.cs" />
-    <Compile Include="Model\Caisse\Entity\Paycheck.cs" />
-    <Compile Include="Model\Caisse\Entity\PayRoll.cs" />
-    <Compile Include="Model\Caisse\Entity\Salary.cs" />
-    <Compile Include="Model\Caisse\Entity\Transaction.cs" />
-    <Compile Include="Model\Caisse\Enums\InstallmentRecurrence.cs" />
-    <Compile Include="Model\Caisse\Enums\PaymentMethode.cs" />
-    <Compile Include="Model\Caisse\Enums\PaymentType.cs" />
-    <Compile Include="Model\Caisse\Enums\PayType.cs" />
-    <Compile Include="Model\Caisse\Enums\TransactionType.cs" />
-    <Compile Include="Model\Caisse\Views\EmploymentCard.cs" />
-    <Compile Include="Model\Caisse\Views\PayrollCard.cs" />
-    <Compile Include="Model\Caisse\Views\SalaryCard.cs" />
-    <Compile Include="Model\Caisse\Views\TransactionCard.cs" />
-    <Compile Include="Model\Shared\Entity\Customer.cs" />
+    <Compile Include="Model\Hr\Entity\BillPayOff.cs" />
+    <Compile Include="Model\Hr\Entity\Employement.cs" />
+    <Compile Include="Model\Hr\Entity\Paycheck.cs" />
+    <Compile Include="Model\Hr\Entity\PayRoll.cs" />
+    <Compile Include="Model\Hr\Entity\Salary.cs" />
+    <Compile Include="Model\Sale\Entity\Transaction.cs" />
+    <Compile Include="Model\Sale\Enums\InstallmentRecurrence.cs" />
+    <Compile Include="Model\Sale\Enums\PaymentMethode.cs" />
+    <Compile Include="Model\Sale\Enums\PaymentType.cs" />
+    <Compile Include="Model\Sale\Enums\PayType.cs" />
+    <Compile Include="Model\Sale\Enums\TransactionType.cs" />
+    <Compile Include="Model\Sale\Views\EmploymentCard.cs" />
+    <Compile Include="Model\Sale\Views\PayrollCard.cs" />
+    <Compile Include="Model\Sale\Views\SalaryCard.cs" />
+    <Compile Include="Model\Sale\Views\TransactionCard.cs" />
+    <Compile Include="Model\Customer\Entity\Customer.cs" />
     <Compile Include="Model\Shared\Enums\CustomerStatus.cs" />
-    <Compile Include="Model\Stocks\Entity\Carburant.cs" />
-    <Compile Include="Model\Stocks\Entity\Citerne.cs" />
+    <Compile Include="Model\Fuel\Entity\Carburant.cs" />
+    <Compile Include="Model\Fuel\Entity\Citerne.cs" />
     <Compile Include="Model\Shared\Entity\Document.cs" />
     <Compile Include="Model\Shared\Entity\Person.cs" />
-    <Compile Include="Model\Stocks\Entity\Colonne.cs" />
-    <Compile Include="Model\Stocks\Entity\Commande.cs" />
-    <Compile Include="Model\Stocks\Entity\Fournisseur.cs" />
-    <Compile Include="Model\Stocks\Entity\Huile.cs" />
-    <Compile Include="Model\Stocks\Entity\Journal.cs" />
-    <Compile Include="Model\Shared\Entity\Staff.cs" />
-    <Compile Include="Model\Stocks\Entity\Pompe.cs" />
-    <Compile Include="Model\Stocks\Entity\Prelevement.cs" />
-    <Compile Include="Model\Stocks\Entity\Stock.cs" />
+    <Compile Include="Model\Fuel\Entity\Colonne.cs" />
+    <Compile Include="Model\Fuel\Entity\Commande.cs" />
+    <Compile Include="Model\Fuel\Entity\Fournisseur.cs" />
+    <Compile Include="Model\Oil\Entity\Huile.cs" />
+    <Compile Include="Model\Sale\Entity\Journal.cs" />
+    <Compile Include="Model\Hr\Entity\Staff.cs" />
+    <Compile Include="Model\Fuel\Entity\Pompe.cs" />
+    <Compile Include="Model\Fuel\Entity\Prelevement.cs" />
+    <Compile Include="Model\Fuel\Entity\Stock.cs" />
     <Compile Include="Model\Shared\Enums\Carburants.cs" />
     <Compile Include="Model\Shared\Enums\StaffStatus.cs" />
     <Compile Include="Model\Shared\Enums\HealthStates.cs" />
@@ -128,8 +132,14 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Model\Stocks\Enums\" />
-    <Folder Include="Model\Stocks\Views\" />
+    <Folder Include="Model\Customer\Enums\" />
+    <Folder Include="Model\Customer\Views\" />
+    <Folder Include="Model\Fuel\Enums\" />
+    <Folder Include="Model\Fuel\Views\" />
+    <Folder Include="Model\Hr\Enums\" />
+    <Folder Include="Model\Hr\Views\" />
+    <Folder Include="Model\Oil\Enums\" />
+    <Folder Include="Model\Oil\Views\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\Resources.resx">

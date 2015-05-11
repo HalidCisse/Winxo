@@ -4,8 +4,8 @@ using System.Data.Entity;
 using System.Linq;
 using CLib;
 using Core.Model;
-using Core.Model.Caisse.Entity;
-using Core.Model.Caisse.Views;
+using Core.Model.Sale.Entity;
+using Core.Model.Sale.Views;
 
 namespace Core.Managers {
 

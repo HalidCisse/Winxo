@@ -1,7 +1,8 @@
 ﻿using System.Data.Entity;
-using Core.Model.Caisse.Entity;
-using Core.Model.Shared.Entity;
-using Core.Model.Stocks.Entity;
+using Core.Model.Fuel.Entity;
+using Core.Model.Hr.Entity;
+using Core.Model.Oil.Entity;
+using Core.Model.Sale.Entity;
 
 namespace Core.Model
 {
@@ -22,7 +23,7 @@ namespace Core.Model
         /// <summary>
         /// Les Clients
         /// </summary>
-        public virtual DbSet<Customer> Customers { get; set; }
+        public virtual DbSet<Customer.Entity.Customer> Customers { get; set; }
 
         /// <summary>
         /// Les Personnels

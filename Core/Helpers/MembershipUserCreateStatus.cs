@@ -1,6 +1,6 @@
 ﻿using System.Web.Security;
 
-namespace DataService.Helpers
+namespace Core.Helpers
 {
     /// <summary>
     /// 

@@ -1,7 +1,5 @@
 ﻿using System.ComponentModel;
 
-
-
 namespace Core.Model.Shared.Enums
 {
     public enum CustomerStatus {

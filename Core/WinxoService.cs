@@ -1,7 +1,5 @@
 ﻿using Core.Managers;
 
-
-
 namespace Core
 {
     public class WinxoService

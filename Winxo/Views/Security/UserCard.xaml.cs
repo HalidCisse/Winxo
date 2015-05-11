@@ -3,7 +3,6 @@ using System.Security;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls.Primitives;
-using System.Windows.Threading;
 using FirstFloor.ModernUI.Windows.Controls;
 
 namespace Winxo.Views.Security

@@ -5,11 +5,10 @@ using System.Web.Security;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
-using System.Windows.Threading;
 using CLib;
+using Core.Helpers;
 using Core.Model.Security.Entity;
 using Core.Model.Security.Enums;
-using DataService.Helpers;
 using FirstFloor.ModernUI.Windows.Controls;
 
 namespace Winxo.Views.Security

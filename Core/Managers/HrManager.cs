@@ -4,6 +4,7 @@ using System.Linq;
 using System.Security.Permissions;
 using CLib;
 using Core.Model;
+using Core.Model.Hr.Entity;
 using Core.Model.Security.Entity;
 using Core.Model.Shared.Entity;
 

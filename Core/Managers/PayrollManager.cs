@@ -7,8 +7,8 @@ using System.Web.Security;
 using CLib;
 using Core.Helpers;
 using Core.Model;
-using Core.Model.Caisse.Entity;
-using Core.Model.Caisse.Views;
+using Core.Model.Hr.Entity;
+using Core.Model.Sale.Views;
 
 namespace Core.Managers
 {

@@ -7,7 +7,6 @@ using System.Windows.Input;
 using CLib;
 using FirstFloor.ModernUI.Windows.Controls;
 
-
 namespace Winxo.Views.Clients
 {
     
