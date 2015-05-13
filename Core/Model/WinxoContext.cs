@@ -3,6 +3,7 @@ using Core.Model.Fuel.Entity;
 using Core.Model.Hr.Entity;
 using Core.Model.Oil.Entity;
 using Core.Model.Sale.Entity;
+using Microsoft.Data.Entity;
 
 namespace Core.Model
 {
